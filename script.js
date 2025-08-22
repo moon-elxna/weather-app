@@ -1,6 +1,6 @@
 async function fetchData(){
     try{
-        const response = await fetch ("https://api.open-meteo.com/v1/forecast?latitude=52.5244&longitude=13.4105&current=temperature_2m,relative_humidity_2m,apparent_temperature,wind_speed_10m,precipitation,weather_code&timezone=Europe%2FBerlin&forecast_days=1");
+        const response = await fetch ("https://api.open-meteo.com/v1/forecast?latitude=52.5244&longitude=13.4105&current=temperature_2m,relative_humidity_2m,apparent_temperature,wind_speed_10m,precipitation,weather_code&timezone=Europe%2FBerlin&forecast_days=1&timeformat=unixtime");
         
         if(!response.ok){ 
             throw new Error ("Could not fetch resource");
@@ -10,7 +10,18 @@ async function fetchData(){
         const data = await response.json();
         console.log(data)
 
-        document.getElementById("time").innerHTML  = data.current.time;
+
+        const timestamp = data.current.time; // e.g. 1693000000
+        const date = new Date(timestamp * 1000); // convert seconds → ms
+        const hours = String(date.getHours()).padStart(2, "0");
+        const minutes = String(date.getMinutes()).padStart(2, "0");
+        const day = String(date.getDate()).padStart(2, "0");
+        const month = String(date.getMonth() + 1).padStart(2, "0"); // months start at 0
+        const year = String(date.getFullYear()).slice(-2);
+        //ChatGPT retten einfax Leben xd
+ 
+
+        document.getElementById("time").innerHTML  = hours + ":" + minutes + ", " + day + "." + month + "." + year;
 
         document.getElementById("temperature").innerHTML = data.current.temperature_2m;
         document.getElementById("temperatureUnit").innerHTML = data.current_units.temperature_2m;
@@ -28,10 +39,6 @@ async function fetchData(){
 
         document.getElementById("humidity").innerHTML  = data.current.relative_humidity_2m;
         document.getElementById("humidityUnit").innerHTML  = data.current_units.relative_humidity_2m;
-        
-        
-
-        console.log(temperature + " " + apparentTemperature + " " + precipitation + " " + humidity + " " + time + " " + weatherCode + " " + wind)
 
     }
 
