@@ -1,6 +1,6 @@
 async function fetchData(){
     try{
-        const response = await fetch ("https://api.open-meteo.com/v1/forecast?latitude=52.5244&longitude=13.4105&current=temperature_2m,relative_humidity_2m,apparent_temperature,wind_speed_10m,precipitation,weather_code,is_day&timezone=Europe%2FBerlin&forecast_days=1&timeformat=unixtime");
+        const response = await fetch ("https://api.open-meteo.com/v1/forecast?latitude=52.5244&longitude=13.4105&current=temperature_2m,relative_humidity_2m,apparent_temperature,is_day,precipitation,weather_code,wind_gusts_10m,wind_speed_10m&timezone=Europe%2FBerlin&forecast_days=3&timeformat=unixtime");
         
         if(!response.ok){ 
             throw new Error ("Could not fetch resource");
@@ -31,6 +31,10 @@ async function fetchData(){
 
         document.getElementById("wind").innerHTML  = data.current.wind_speed_10m;
         document.getElementById("windUnit").innerHTML  = data.current_units.wind_speed_10m;
+
+
+document.getElementById("windGust").innerHTML  = data.current.wind_gusts_10m;
+        document.getElementById("windGustUnit").innerHTML  = data.current_units.wind_gusts_10m;
 
         document.getElementById("precipitation").innerHTML  = data.current.precipitation;
         document.getElementById("precipitationUnit").innerHTML  = data.current_units.precipitation;
