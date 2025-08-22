@@ -1,3 +1,15 @@
+#weather {
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2.5vh 5vw;
+
+    border: 0px;
+    border-radius: 25px;
+    background-color: hsl(210, 59%, 93%);
+
+}
+
 #currentWeather {
     display: flex;
 }
@@ -6,10 +18,37 @@
     display: flex;
 }
 
-div {
-    margin: 10px;
-}
 
 #iconWeather {
-    width: 100px;
+    width: 150px;
+}
+
+
+
+h1 {
+    font-size: 28px;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: normal;
+}
+
+p {
+    font-size: 20px;
+}
+
+.more {
+    font-size: 15px;
+    border: 0px;
+    border-radius: 15px;
+    background-color: hsl(0, 0%, 100%);
+}
+
+div.more {
+    margin: 5px;
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-top: 2.5px;
+    padding-bottom: 2.5px;
 }
