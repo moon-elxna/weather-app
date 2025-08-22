@@ -2,7 +2,8 @@
     max-width: fit-content;
     margin-left: auto;
     margin-right: auto;
-    padding: 2.5vh 5vw;
+    padding-left: 5px;
+    padding-right: 5px;
 
     border: 0px;
     border-radius: 25px;
@@ -10,19 +11,23 @@
 
 }
 
+
+
+
 #currentWeather {
     display: flex;
 }
 
 #moreWeather {
     display: flex;
+    flex: 1;
+    gap: 10px;
+    /* schöner Zwischenraum */
 }
 
-
-#iconWeather {
-    width: 150px;
+#moreWeather {
+    display: flex;
 }
-
 
 
 h1 {
@@ -43,7 +48,9 @@ p {
     border: 0px;
     border-radius: 15px;
     background-color: hsl(0, 0%, 100%);
+
 }
+
 
 div.more {
     margin: 5px;
@@ -51,4 +58,5 @@ div.more {
     padding-left: 5px;
     padding-top: 2.5px;
     padding-bottom: 2.5px;
+    width: 25%;
 }

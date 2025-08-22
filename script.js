@@ -33,7 +33,7 @@ async function fetchData(){
         document.getElementById("windUnit").innerHTML  = data.current_units.wind_speed_10m;
 
 
-document.getElementById("windGust").innerHTML  = data.current.wind_gusts_10m;
+        document.getElementById("windGust").innerHTML  = data.current.wind_gusts_10m;
         document.getElementById("windGustUnit").innerHTML  = data.current_units.wind_gusts_10m;
 
         document.getElementById("precipitation").innerHTML  = data.current.precipitation;
