@@ -9,8 +9,71 @@
 </head>
 
 <body>
-    <h1>Title</h1>
-    <button onclick="fetchData()">Wetter laden</button>
+    <!--<button onclick="fetchData()">Wetter laden</button>-->
+    <p id="time"></p>
+
+    <div id="weather">
+
+        <div id="dataWeather">
+
+            <div id="currentWeather">
+
+                <div class="current">
+                    <p>
+                        <span id="temperature"></span>
+                        <span id="temperatureUnit"></span>
+                    </p>
+                </div>
+
+                <div class="current">
+                    <p>
+                        <span id="iconWeather"></span>
+                        <span id=" "></span>
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div id="moreWeather">
+
+                <div class="more">
+                    <p>
+                        <span id="apparentTemperature"></span>
+                        <span id="apparentTemperatureUnit"></span>
+                    </p>
+
+                </div>
+
+                <div class="more">
+                    <p>
+                        <span id="wind"></span>
+                        <span id="windUnit"></span>
+                    </p>
+
+                </div>
+
+                <div class="more">
+                    <p>
+                        <span id="precipitation"></span>
+                        <span id="precipitationUnit"></span>
+                    </p>
+
+                </div>
+
+                <div class="more">
+                    <p>
+                        <span id="humidity"></span>
+                        <span id="humidityUnit"></span>
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
     <script src="script.js"></script>
 
 </body>

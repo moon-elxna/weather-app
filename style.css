@@ -1,0 +1,11 @@
+#currentWeather {
+    display: flex;
+}
+
+#moreWeather {
+    display: flex;
+}
+
+div {
+    margin: 10px;
+}
