@@ -1,0 +1,28 @@
+#weather {
+    display: flex;
+
+}
+
+#current {
+    width: 40%;
+}
+
+#forecast {
+    width: 60%;
+}
+
+#hour {
+    display: flex;
+}
+
+#hourWeather {
+    width: 25%;
+}
+
+#day {
+    display: flex;
+}
+
+#dayWeather {
+    width: 25%;
+}
