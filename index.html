@@ -5,89 +5,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Wetter</title>
 </head>
 
 <body>
+
     <div id="weather">
-        <div id="info">
-            <h1>Aktuelle Wetter</h1>
+
+        <div>
+            <h1>Aktuelles Wetter</h1>
             <h2>Berlin (<span id="time"></span>)</h2>
         </div>
 
-        <div id="dataWeather">
 
-            <div id="currentWeather">
+        <div id="currentWeather">
 
-                <div class="current">
-                    <p>
-                        <span id="temperature"></span>
-                        <span id="temperatureUnit"></span>
-                    </p>
-                    <p> Gefühlt wie
-                        <span id="apparentTemperature"></span>
-                        <span id="apparentTemperatureUnit"></span>
-                    </p>
+            <div class="current">
+                <p>
+                    <span id="temperature"></span>
+                    <span id="temperatureUnit"></span>
+                </p>
+                <p> Gefühlt wie
+                    <span id="apparentTemperature"></span>
+                    <span id="apparentTemperatureUnit"></span>
+                </p>
+            </div>
 
-                </div>
-
-
-                <div class="current">
-                    <p>
-                        <img id="iconWeather" src=""></img>
-                    </p>
-
-                </div>
+            <div class="current">
+                <img id="iconWeather" src=""></img>
             </div>
 
         </div>
 
         <div id="moreWeather">
 
-
             <div class="more">
                 <p class="more">Wind</p>
-                <p>
-                    <span class="more" id="wind"></span>
-                    <span class="more" id="windUnit"></span>
+                <p class="more">
+                    <span id="wind"></span>
+                    <span id="windUnit"></span>
                 </p>
-
             </div>
 
             <div class="more">
                 <p class="more">Windböen</p>
-                <p>
-                    <span class="more" id="windGust"></span>
-                    <span class="more" id="windGustUnit"></span>
+                <p class="more">
+                    <span id="windGust"></span>
+                    <span id="windGustUnit"></span>
                 </p>
-
             </div>
-
 
             <div class="more">
                 <p class="more">Niederschlag</p>
-                <p>
-                    <span class="more" id="precipitation"></span>
-                    <span class="more" id="precipitationUnit"></span>
+                <p class="more">
+                    <span id="precipitation"></span>
+                    <span id="precipitationUnit"></span>
                 </p>
-
             </div>
 
             <div class="more">
                 <p class="more">Feuchtigkeit</p>
-                <p>
-                    <span class="more" id="humidity"></span>
-                    <span class="more" id="humidityUnit"></span>
+                <p class="more">
+                    <span id="humidity"></span>
+                    <span id="humidityUnit"></span>
                 </p>
-
             </div>
-
 
         </div>
 
     </div>
 
-    </div>
     <script src="script.js"></script>
 
 </body>
