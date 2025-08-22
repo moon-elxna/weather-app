@@ -1,6 +1,6 @@
 async function fetchData(){
     try{
-        const response = await fetch ("https://api.open-meteo.com/v1/forecast?latitude=52.5244&longitude=13.4105&current=temperature_2m,relative_humidity_2m,apparent_temperature,wind_speed_10m,precipitation,weather_code&timezone=Europe%2FBerlin&forecast_days=1&timeformat=unixtime");
+        const response = await fetch ("https://api.open-meteo.com/v1/forecast?latitude=52.5244&longitude=13.4105&current=temperature_2m,relative_humidity_2m,apparent_temperature,wind_speed_10m,precipitation,weather_code,is_day&timezone=Europe%2FBerlin&forecast_days=1&timeformat=unixtime");
         
         if(!response.ok){ 
             throw new Error ("Could not fetch resource");
@@ -26,8 +26,6 @@ async function fetchData(){
         document.getElementById("temperature").innerHTML = data.current.temperature_2m;
         document.getElementById("temperatureUnit").innerHTML = data.current_units.temperature_2m;
 
-        document.getElementById("iconWeather").innerHTML  = data.current.weather_code;
-
         document.getElementById("apparentTemperature").innerHTML = data.current.apparent_temperature;
         document.getElementById("apparentTemperatureUnit").innerHTML = data.current_units.apparent_temperature;
 
@@ -39,6 +37,59 @@ async function fetchData(){
 
         document.getElementById("humidity").innerHTML  = data.current.relative_humidity_2m;
         document.getElementById("humidityUnit").innerHTML  = data.current_units.relative_humidity_2m;
+
+        const iconWeather = data.current.weather_code;
+
+        if ([0, 1].includes(iconWeather)) {
+            const dayNight = current.is_day;
+            
+            if (dayNight = 1){
+                document.getElementById("iconWeather").src = "img/01d.png";
+            }
+
+            else {
+              document.getElementById("iconWeather").src = "img/01n.png";  
+            }
+        }
+
+        else if ([2, 3].includes(iconWeather)) {
+            document.getElementById("iconWeather").src = "img/02.png";       
+        }
+        else if ([45, 48].includes(iconWeather)){
+            document.getElementById("iconWeather").src = "img/45.png"; 
+                
+        }
+        else if ([51, 53, 55, ].includes(iconWeather)){
+            document.getElementById("iconWeather").src = "img/51.png"; 
+                
+        }
+        else if ([61, 63, 65, 80, 81, 82].includes(iconWeather)){
+            document.getElementById("iconWeather").src = "img/45.png"; 
+                
+        }
+        else if ([57, 66, 67].includes(iconWeather)){
+            document.getElementById("iconWeather").src = "img/66.png"; 
+                
+        } 
+        else if ([71, 73, 75, 77].includes(iconWeather)){
+            document.getElementById("iconWeather").src = "img/45.png"; 
+                
+        }
+        else if ([85,86 ].includes(iconWeather)){
+            document.getElementById("iconWeather").src = "img/85.png"; 
+                
+        }
+        else if ([95].includes(iconWeather)){
+            document.getElementById("iconWeather").src = "img/95.png"; 
+                
+        }
+        else if ([96, 99].includes(iconWeather)){
+            document.getElementById("iconWeather").src = "img/96.png"; 
+                
+        }
+        else{
+            alert("Error bei Icon Anzeige")
+        }
 
     }
 
