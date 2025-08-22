@@ -4,18 +4,12 @@
     max-width: fit-content;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 10px;
-    padding-right: 10px;
-
-    border: 0px;
-    border-radius: 25px;
-    background-color: hsl(210, 59%, 93%);
+    background-color: bisque;
 
 }
 
 #currentWeather {
     display: flex;
-
 }
 
 #moreWeather {
@@ -23,15 +17,11 @@
 }
 
 div.more {
-    margin: 5px;
-    padding-right: 5px;
-    padding-left: 5px;
-    padding-top: 2.5px;
-    padding-bottom: 2.5px;
-    width: 25%;
-    border: 0px;
-    border-radius: 15px;
-    background-color: hsl(0, 0%, 100%);
+    margin: 10px;
+    background-color: hsl(0, 100%, 93%);
+    width: 10vw;
+    height: fit-content;
+
 }
 
 div.current {
@@ -68,15 +58,20 @@ p.more {
 /*media query for mobile*/
 @media (max-width: 600px) {
     #currentWeather {
-        flex-direction: column;
         align-items: center;
     }
 
     #moreWeather {
         flex-direction: column;
+        align-items: center;
     }
 
     #moreWeather .more {
-        width: 100%;
+        width: 90%;
+        height: fit-content;
+    }
+
+    img {
+        width: min-content;
     }
 }
