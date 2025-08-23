@@ -65,7 +65,7 @@ h2 {
 }
 
 p#temp {
-    font-size: 28px;
+    font-size: 36px;
     color: black;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-style: normal;
@@ -74,11 +74,11 @@ p#temp {
 }
 
 p#appTemp {
-    font-size: 18px;
+    font-size: 20px;
     color: black;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-style: normal;
-    font-weight: bold;
+    font-weight: normal;
     margin-left: 20px;
 }
 
