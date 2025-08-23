@@ -12,6 +12,7 @@ body {
     display: flex;
     flex-direction: column;
     max-width: fit-content;
+    margin-top: 10px;
 
     border-color: rgb(244, 244, 244);
     border-width: 20px;
