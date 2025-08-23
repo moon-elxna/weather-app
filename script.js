@@ -20,17 +20,17 @@ async function fetchData(){
         document.getElementById("time").innerHTML  = hours + ":" + minutes + ", " + day + "." + month + "." + year;  
         //ChatGPT retten einfax Leben xd 
        
-        document.getElementById("temperature").innerHTML = data.current.temperature_2m;
+        document.getElementById("temperature").innerHTML = data.current.temperature_2m.toFixed(0) ;
         document.getElementById("temperatureUnit").innerHTML = data.current_units.temperature_2m;
-        document.getElementById("apparentTemperature").innerHTML = data.current.apparent_temperature;
+        document.getElementById("apparentTemperature").innerHTML = data.current.apparent_temperature.toFixed(0);
         document.getElementById("apparentTemperatureUnit").innerHTML = data.current_units.apparent_temperature;
-        document.getElementById("wind").innerHTML  = data.current.wind_speed_10m;
+        document.getElementById("wind").innerHTML  = data.current.wind_speed_10m.toFixed(0);
         document.getElementById("windUnit").innerHTML  = data.current_units.wind_speed_10m;
-        document.getElementById("windGust").innerHTML  = data.current.wind_gusts_10m;
+        document.getElementById("windGust").innerHTML  = data.current.wind_gusts_10m.toFixed(0);
         document.getElementById("windGustUnit").innerHTML  = data.current_units.wind_gusts_10m;
         document.getElementById("precipitation").innerHTML  = data.current.precipitation;
         document.getElementById("precipitationUnit").innerHTML  = data.current_units.precipitation;
-        document.getElementById("humidity").innerHTML  = data.current.relative_humidity_2m;
+        document.getElementById("humidity").innerHTML  = data.current.relative_humidity_2m.toFixed(0);
         document.getElementById("humidityUnit").innerHTML  = data.current_units.relative_humidity_2m;
 
         const iconWeather = data.current.weather_code;
