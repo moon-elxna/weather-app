@@ -35,7 +35,7 @@ async function fetchData(){
 
         const iconWeather = data.current.weather_code;
 
-        if ([0, 1].includes(iconWeather)) { 
+        if (iconWeather == 0 || iconWeather == 1) { 
             const dayNight = data.current.is_day; 
 
             if (dayNight == 1){
@@ -48,35 +48,35 @@ async function fetchData(){
                 alert("Error bei Anzeige des Icons")
             }
         }
-        else if ([2, 3].includes(iconWeather)) {
+        else if (iconWeather == 2 || iconWeather == 3) {
             document.getElementById("iconWeather").src = "img/02.png";       
         }
-        else if ([45, 48].includes(iconWeather)){
+        else if (iconWeather == 45 || iconWeather == 48){
             document.getElementById("iconWeather").src = "img/45.png";       
         }
-        else if ([51, 53, 55, ].includes(iconWeather)){
+        else if (iconWeather == 51 || iconWeather == 53|| iconWeather == 55){
             document.getElementById("iconWeather").src = "img/51.png";        
         }
-        else if ([61, 63, 65, 80, 81, 82].includes(iconWeather)){
+        else if (iconWeather == 61 || iconWeather == 63|| iconWeather == 65 || iconWeather == 80 || iconWeather == 81|| iconWeather == 82){
             document.getElementById("iconWeather").src = "img/45.png";       
         }
-        else if ([57, 66, 67].includes(iconWeather)){
+        else if (iconWeather == 57 || iconWeather == 66|| iconWeather == 67){
             document.getElementById("iconWeather").src = "img/66.png";        
         } 
-        else if ([71, 73, 75, 77].includes(iconWeather)){
+        else if (iconWeather == 71 || iconWeather == 73|| iconWeather == 75 || iconWeather == 77){
             document.getElementById("iconWeather").src = "img/45.png";        
         }
-        else if ([85,86 ].includes(iconWeather)){
+        else if (iconWeather == 85 || iconWeather == 86){
             document.getElementById("iconWeather").src = "img/85.png";         
         }
-        else if ([95].includes(iconWeather)){
+        else if (iconWeather == 95){
             document.getElementById("iconWeather").src = "img/95.png";         
         }
-        else if ([96, 99].includes(iconWeather)){
+        else if (iconWeather == 96 || iconWeather == 99){
             document.getElementById("iconWeather").src = "img/96.png";     
         }
         else{
-            alert("Error bei Anzeige des Icons")
+            alert("Error, kein passendes Icon verfügbar")
         }
     }
 
