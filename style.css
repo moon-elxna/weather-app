@@ -1,23 +1,22 @@
 body {
-    background-color: white;
-    /*to center the whole weather box*/
+    background-color: #f9fdff;
     display: flex;
     align-items: center;
     justify-content: center;
+
 }
 
 #weather {
-    background-color: rgb(244, 244, 244);
-
+    background-color: #d8e9ef;
     display: flex;
     flex-direction: column;
     max-width: fit-content;
     margin-top: 10px;
-
-    border-color: rgb(244, 244, 244);
+    border-color: #d8e9ef;
     border-width: 20px;
     border-style: solid;
     border-radius: 10px;
+
 }
 
 #currentWeather {
@@ -30,12 +29,11 @@ body {
 #moreWeather {
     display: flex;
     justify-content: center;
-
 }
 
 div.more {
-    background-color: #e0e0e0;
-    border: 2.5px solid #e0e0e0;
+    background-color: #ffffff9a;
+    border: 2.5px #ffffff9a;
     border-radius: 10px;
     padding-left: 10px;
     width: 50%;
@@ -49,44 +47,34 @@ img {
 
 h1 {
     font-size: 24px;
-    color: black;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-style: normal;
     font-weight: normal;
     margin-left: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 h2 {
     font-size: 20px;
-    color: black;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-style: normal;
     font-weight: normal;
     margin-left: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+p {
+    color: black;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 p#temp {
     font-size: 36px;
-    color: black;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-style: normal;
     font-weight: bold;
     margin-left: 20px;
 }
 
 p#appTemp {
     font-size: 20px;
-    color: black;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-style: normal;
-    font-weight: normal;
     margin-left: 20px;
 }
 
 p.more {
     font-size: 16px;
-    color: black;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-style: normal;
-    font-weight: normal;
 }
