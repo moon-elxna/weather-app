@@ -1,3 +1,9 @@
+@font-face {
+    font-family: 'MergedFont';
+    src: url('/font/MergedFont.ttf');
+}
+
+
 body {
     background-color: #f9fdff;
     display: flex;
@@ -46,10 +52,11 @@ img {
 }
 
 h1 {
-    font-size: 24px;
+    font-size: 40px;
     font-weight: normal;
     margin-left: 20px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'MergedFont';
+    /*font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;*/
 }
 
 h2 {
