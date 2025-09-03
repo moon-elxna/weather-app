@@ -64,6 +64,7 @@ h2 {
     font-weight: normal;
     margin-left: 20px;
     margin-top: 0px;
+    margin-bottom: 0px;
     font-family: "ElinaWeather";
 }
 
@@ -79,16 +80,17 @@ p#temp {
 }
 
 p#appTemp {
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 22px;
+    font-weight: normal;
     margin-left: 20px;
+    margin-top: -20px;
 }
 
 p.more {
-    font-size: 16px;
+    font-size: 18px;
 }
 
 p.moreTitle {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
 }
