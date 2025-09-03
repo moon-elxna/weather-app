@@ -6,21 +6,18 @@
 
 
 body {
-    background-color: #f9fdff;
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
 
 #weather {
-    background-color: #d8e9ef;
     display: flex;
     flex-direction: column;
     max-width: fit-content;
     margin-top: 10px;
-    border-color: #d8e9ef;
-    border-width: 20px;
+    padding: 20px;
+    border-width: 0px;
     border-style: solid;
     border-radius: 10px;
 
@@ -39,8 +36,8 @@ body {
 }
 
 div.more {
-    background-color: #ffffff9a;
-    border: 2.5px #ffffff9a;
+    padding: 2.5px;
+    border: 0px;
     border-radius: 10px;
     padding-left: 10px;
     width: 50%;
