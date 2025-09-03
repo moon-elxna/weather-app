@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'MergedFont';
-    src: url('/font/MergedFont.ttf');
+    src: url("../weather-berlin/font/MergedFont.ttf") format('truetype');
 }
 
 
