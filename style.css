@@ -5,7 +5,6 @@
 }
 
 
-
 body {
     background-color: #f9fdff;
     display: flex;
@@ -54,9 +53,9 @@ img {
 }
 
 h1 {
-    font-size: 40px;
-    font-weight: normal;
+    font-size: 35px;
     margin-left: 20px;
+    margin-top: 0px;
     font-family: "ElinaWeather";
 }
 
@@ -64,25 +63,32 @@ h2 {
     font-size: 20px;
     font-weight: normal;
     margin-left: 20px;
+    margin-top: 0px;
     font-family: "ElinaWeather";
 }
 
 p {
     color: black;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: "ElinaWeather";
 }
 
 p#temp {
     font-size: 36px;
-    font-weight: bold;
+    font-weight: bolder;
     margin-left: 20px;
 }
 
 p#appTemp {
     font-size: 20px;
+    font-weight: bold;
     margin-left: 20px;
 }
 
 p.more {
     font-size: 16px;
+}
+
+p.moreTitle {
+    font-size: 16px;
+    font-weight: bold;
 }
