@@ -1,7 +1,7 @@
-fetchData();
+fetchDataCurrentWeather();
 colorDesign();
 
-async function fetchData() {
+async function fetchDataCurrentWeather() {
     try {
         const response = await fetch("https://api.open-meteo.com/v1/forecast?latitude=52.5244&longitude=13.4105&current=temperature_2m,relative_humidity_2m,apparent_temperature,is_day,precipitation,weather_code,wind_gusts_10m,wind_speed_10m&timezone=Europe%2FBerlin&forecast_days=3&timeformat=unixtime");
 
