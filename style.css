@@ -12,20 +12,6 @@ body {
     gap: 10px;
 }
 
-#weather2 {
-    display: flex;
-    flex-direction: column;
-    max-width: fit-content;
-    margin-top: 10px;
-    padding: 12.5px;
-    border-width: 0px;
-    border-style: solid;
-    border-radius: 10px;
-    background-color: wheat;
-
-
-
-}
 
 
 #weather {
@@ -74,17 +60,36 @@ h1 {
 }
 
 h2 {
-    font-size: 20px;
+    font-size: 15px;
     font-weight: normal;
     margin-left: 20px;
-    margin-top: 0px;
-    margin-bottom: 0px;
+    margin-top: -10px;
+    font-family: "ElinaWeather";
+}
+
+input {
+    font-size: 20px;
+    font-weight: normal;
+    font-family: "ElinaWeather";
+    display: inline-block;
+    width: fit-content;
+}
+
+button {
+    font-size: 20px;
+    font-weight: normal;
     font-family: "ElinaWeather";
 }
 
 p {
     color: black;
     font-family: "ElinaWeather";
+}
+
+p#time {
+    margin-top: 0px;
+    margin-bottom: -20px;
+    margin-left: 20px;
 }
 
 p#temp {
@@ -98,6 +103,7 @@ p#appTemp {
     font-weight: normal;
     margin-left: 20px;
     margin-top: -20px;
+
 }
 
 p.more {
