@@ -41,6 +41,10 @@ p.moreTitle {
     font-weight: bold;
 }
 
+p#timex {
+    margin-left: 20px;
+}
+
 /*OTHER ELEMENTS*/
 
 button#btn1 {
@@ -71,7 +75,6 @@ img {
 
 body {
     display: flex;
-    align-items: stretch;
     justify-content: center;
     gap: 10px;
 }
@@ -189,6 +192,10 @@ div.more {
 /*MEDIA QUERY*/
 
 @media (max-width: 700px) {
+    p#timex {
+        margin-left: 0px;
+    }
+
     div#weather1 {
         display: flex;
         flex-direction: column;

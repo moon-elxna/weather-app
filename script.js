@@ -174,7 +174,9 @@ async function fetchDataCurrentWeather(weatherApiLink) {
 }
 
 async function fetchDataCity() {
-    console.log("shit");
+    for (let i = 0; i < 10; i++) {
+        document.getElementById("cityCountry" + i).style.display = "grid"
+    }
 
     const city = document.getElementById("inputSearch").value;
     const cityApiLink = "https://geocoding-api.open-meteo.com/v1/search?name=" + city + "&count=10&language=de&format=json";
