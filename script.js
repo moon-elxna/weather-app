@@ -20,7 +20,7 @@ function setWeatherIcon(iconWeather, isDay) {
             document.getElementById("iconWeather").src = "img/01n.png";
         }
         else {
-            alert("Error bei Anzeige des Icons")
+            console.error(error)
         }
     }
     else if (iconWeather == 2 || iconWeather == 3) {
@@ -51,7 +51,7 @@ function setWeatherIcon(iconWeather, isDay) {
         document.getElementById("iconWeather").src = "img/96.png";
     }
     else {
-        alert("Error, kein passendes Icon verfügbar")
+        console.error(error)
     }
 
 }
@@ -113,7 +113,7 @@ function setColorTheme(isDay) {
         }
     }
     else {
-        alert("Error bei Hintergrundfarb Anzeige!")
+        console.error(error)
     }
 
 }
@@ -133,6 +133,7 @@ function btn1() {
     const input = document.getElementById("inputSearch");
     if (input.value.trim() === "") {
         alert("Bitte Stadt eingeben!");
+        console.error(error);
     } else {
         fetchDataCity();
     }
@@ -225,7 +226,6 @@ async function chooseCity(n) {
         const data = await response.json();
 
         fetchDataCurrentWeather("https://api.open-meteo.com/v1/forecast?latitude=" + data.results[n].latitude + "&longitude=" + data.results[n].longitude + "&current=temperature_2m,relative_humidity_2m,apparent_temperature,is_day,precipitation,weather_code,wind_gusts_10m,wind_speed_10m&timezone=auto&forecast_days=3&timeformat=unixtime");
-        console.log("https://api.open-meteo.com/v1/forecast?latitude=" + data.results[n].latitude + "&longitude=" + data.results[n].longitude + "&current=temperature_2m,relative_humidity_2m,apparent_temperature,is_day,precipitation,weather_code,wind_gusts_10m,wind_speed_10m&timezone=auto&forecast_days=3&timeformat=unixtime");
     }
 
     catch (error) {
