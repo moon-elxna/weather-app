@@ -7,14 +7,14 @@
 
 body {
     display: flex;
-    align-items: center;
+    align-items: stretch;
     justify-content: center;
     gap: 10px;
 }
 
 
 
-#weather {
+#app {
     display: flex;
     flex-direction: column;
     max-width: fit-content;
@@ -26,20 +26,90 @@ body {
 
 }
 
-#searchResults {
-    display: flex;
+
+div#searchResultsSelection {
+
+    /* display: flex;
     flex-direction: column;
-    max-width: fit-content;
-    margin-top: 10px;
-    padding: 12.5px;
-    border-width: 0px;
-    border-style: solid;
-    border-radius: 10px;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 5px; */
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+}
+
+div#cityCountry0 {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+div#cityCountry1 {
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+div#cityCountry2 {
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+div#cityCountry3 {
+    grid-area: 2 / 2 / 3 / 3;
+}
+
+div#cityCountry4 {
+    grid-area: 3 / 1 / 4 / 2;
+}
+
+div#cityCountry5 {
+    grid-area: 3 / 2 / 4 / 3;
+}
+
+div#cityCountry6 {
+    grid-area: 4 / 1 / 5 / 2;
+}
+
+div#cityCountry7 {
+    grid-area: 4 / 2 / 5 / 3;
+}
+
+div#cityCountry8 {
+    grid-area: 5 / 1 / 6 / 2;
+}
+
+div#cityCountry9 {
+    grid-area: 5 / 2 / 6 / 3;
+}
+
+
+/* Make all direct children of #searchResultsSelection stretch to full width */
+div#searchResultsSelection>* {
+
+    width: 100%;
+    box-sizing: border-box;
+    background-color: rgb(220, 220, 220);
+    height: min-content;
+    font-size: 15px;
+    font-weight: normal;
+    font-family: "ElinaWeather";
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0;
+    cursor: pointer;
+    /* Make it look clickable */
+
+    /* Optional: Add hover effect */
+    transition: background-color 0.2s;
 
 }
 
-div.searchResultsChildren {
-    width: max-content;
+#weather1 {
+    display: flex;
+    flex-direction: row;
+
 
 }
 
@@ -51,17 +121,37 @@ div.searchResultsChildren {
 }
 
 #moreWeather {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
 }
 
+#more1 {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+#more2 {
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+#more3 {
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+#more4 {
+    grid-area: 2 / 2 / 3 / 3;
+}
+
+
 div.more {
-    padding: 2.5px;
+
     border: 0px;
     border-radius: 10px;
     padding-left: 10px;
-    width: 50%;
-    margin: 5px;
+    padding-right: 30px;
+
 }
 
 img {
@@ -102,9 +192,13 @@ button.cityCountry {
     font-size: 15px;
     font-weight: normal;
     font-family: "ElinaWeather";
-
+    width: 100%;
+    padding: -10px;
 }
 
+p.cityName {
+    padding: 0px;
+}
 
 
 p {
@@ -134,4 +228,61 @@ p.more {
 p.moreTitle {
     font-size: 18px;
     font-weight: bold;
+}
+
+@media (max-width: 700px) {
+    #weather1 {
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    div#searchResultsSelection {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(10, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 10px;
+    }
+
+    div#cityCountry0 {
+        grid-area: 1 / 1 / 2 / 2;
+    }
+
+    div#cityCountry1 {
+        grid-area: 2 / 1 / 3 / 2;
+    }
+
+    div#cityCountry2 {
+        grid-area: 3 / 1 / 4 / 2;
+    }
+
+    div#cityCountry3 {
+        grid-area: 4 / 1 / 5 / 2;
+    }
+
+    div#cityCountry4 {
+        grid-area: 5 / 1 / 6 / 2;
+    }
+
+    div#cityCountry5 {
+        grid-area: 6 / 1 / 7 / 2;
+    }
+
+    div#cityCountry6 {
+        grid-area: 7 / 1 / 8 / 2;
+    }
+
+    div#cityCountry7 {
+        grid-area: 8 / 1 / 9 / 2;
+    }
+
+    div#cityCountry8 {
+        grid-area: 9 / 1 / 10 / 2;
+    }
+
+    div#cityCountry9 {
+        grid-area: 10 / 1 / 11 / 2;
+    }
+
 }

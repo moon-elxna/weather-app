@@ -1,12 +1,12 @@
 fetchDataCurrentWeather("https://api.open-meteo.com/v1/forecast?latitude=52.5244&longitude=13.4105&current=temperature_2m,relative_humidity_2m,apparent_temperature,is_day,precipitation,weather_code,wind_gusts_10m,wind_speed_10m&timezone=Europe%2FBerlin&forecast_days=3&timeformat=unixtime");
 
 function overlaySearchResults() {
-    document.getElementById("weatherElements").style.display = "none";
+    document.getElementById("weather").style.display = "none";
     document.getElementById("searchResults").style.display = "block";
 }
 
 function overlayWeatherElements() {
-    document.getElementById("weatherElements").style.display = "block";
+    document.getElementById("weather").style.display = "block";
     document.getElementById("searchResults").style.display = "none";
 }
 
@@ -61,7 +61,7 @@ function setColorTheme(isDay) {
         const body = document.getElementById("body");
         body.style.backgroundColor = "#2d2f61";
 
-        const weather = document.getElementById("weather");
+        const weather = document.getElementById("app");
         weather.style.backgroundColor = "#ffffffb7";
 
         const more1 = document.getElementById("more1");
@@ -80,7 +80,7 @@ function setColorTheme(isDay) {
         const body = document.getElementById("body");
         body.style.backgroundColor = "#7ddaff";
 
-        const weather = document.getElementById("weather");
+        const weather = document.getElementById("app");
         weather.style.backgroundColor = "#ffffff9c";
 
         const more1 = document.getElementById("more1");
@@ -113,7 +113,7 @@ function unixToTime(timestamp) {
 }
 
 function btn1() {
-    const input = document.getElementById("input1");
+    const input = document.getElementById("inputSearch");
     if (input.value.trim() === "") {
         alert("Bitte Stadt eingeben!");
     } else {
@@ -159,7 +159,7 @@ async function fetchDataCurrentWeather(weatherApiLink) {
 async function fetchDataCity() {
     console.log("shit");
 
-    const city = document.getElementById("input1").value;
+    const city = document.getElementById("inputSearch").value;
     const cityApiLink = "https://geocoding-api.open-meteo.com/v1/search?name=" + city + "&count=10&language=de&format=json";
 
     try {
@@ -193,7 +193,7 @@ async function fetchDataCity() {
 }
 
 async function chooseCity(n) {
-    const city = document.getElementById("input1").value;
+    const city = document.getElementById("inputSearch").value;
     const cityApiLink = "https://geocoding-api.open-meteo.com/v1/search?name=" + city + "&count=10&language=de&format=json";
 
     try {

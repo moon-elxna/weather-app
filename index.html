@@ -10,131 +10,123 @@
 </head>
 
 <body id="body">
+
     <script src="script.js"></script>
 
+    <div id="app">
 
-    <div id="weather">
+        <div id="search">
 
-        <div>
             <h1>Aktuelles Wetter</h1>
             <h2>
-                <input id="input1" type="text" placeholder="Berlin" style="width: fit-content;">
+                <input id="inputSearch" type="text" placeholder="Berlin" style="width: fit-content;">
                 <button onclick="btn1()">✓</button>
             </h2>
-
 
         </div>
 
         <div id="searchResults">
-            <div class="searchResultsChildren">
-                <button class="cityCountry" id="cityCountry0" onclick="chooseCity(0)">
+
+            <div id="searchResultsSelection">
+
+                <div class="cityCountry" id="cityCountry0" onclick="chooseCity(0)">
                     <p class="cityName" id="cityName0"></p>
-                </button>
-            </div>
-            <div class="searchResultsChildren">
-                <button class="cityCountry" id="cityCountry1" onclick="chooseCity(1)">
+                </div>
+                <div class="cityCountry" id="cityCountry1" onclick="chooseCity(1)">
                     <p class="cityName" id="cityName1"></p>
-                </button>
-            </div>
-            <div class="searchResultsChildren">
-                <button class="cityCountry" id="cityCountry2" onclick="chooseCity(2)">
+                </div>
+                <div class="cityCountry" id="cityCountry2" onclick="chooseCity(2)">
                     <p class="cityName" id="cityName2"></p>
-                </button>
-            </div>
-            <div class="searchResultsChildren">
-                <button class="cityCountry" id="cityCountry3" onclick="chooseCity(3)">
+                </div>
+                <div class="cityCountry" id="cityCountry3" onclick="chooseCity(3)">
                     <p class="cityName" id="cityName3"></p>
-                </button>
-            </div>
-            <div class="searchResultsChildren">
-                <button class="cityCountry" id="cityCountry4" onclick="chooseCity(4)">
+                </div>
+                <div class="cityCountry" id="cityCountry4" onclick="chooseCity(4)">
                     <p class="cityName" id="cityName4"></p>
-                </button>
-            </div>
-            <div class="searchResultsChildren">
-                <button class="cityCountry" id="cityCountry5" onclick="chooseCity(5)">
+                </div>
+                <div class="cityCountry" id="cityCountry5" onclick="chooseCity(5)">
                     <p class="cityName" id="cityName5"></p>
-                </button>
-            </div>
-            <div class="searchResultsChildren">
-                <button class="cityCountry" id="cityCountry6" onclick="chooseCity(6)">
+                </div>
+                <div class="cityCountry" id="cityCountry6" onclick="chooseCity(6)">
                     <p class="cityName" id="cityName6"></p>
-                </button>
-            </div>
-            <div class="searchResultsChildren">
-                <button class="cityCountry" id="cityCountry7" onclick="chooseCity(7)">
+                </div>
+                <div class="cityCountry" id="cityCountry7" onclick="chooseCity(7)">
                     <p class="cityName" id="cityName7"></p>
-                </button>
-            </div>
-            <div class="searchResultsChildren">
-                <button class="cityCountry" id="cityCountry8" onclick="chooseCity(8)">
+                </div>
+                <div class="cityCountry" id="cityCountry8" onclick="chooseCity(8)">
                     <p class="cityName" id="cityName8"></p>
-                </button>
-            </div>
-            <div class="searchResultsChildren">
-                <button class="cityCountry" id="cityCountry9" onclick="chooseCity(9)">
+                </div>
+                <div class="cityCountry" id="cityCountry9" onclick="chooseCity(9)">
                     <p class="cityName" id="cityName9"></p>
-                </button>
+                </div>
+
             </div>
+
         </div>
 
-        <div id="weatherElements">
+        <div id="weather">
+            <div id="weather1">
 
-            <div id="currentWeather">
+                <div id="currentWeather">
 
-                <div class="current">
-                    <p id="temp">
-                        <span id="temperature"></span>
-                        <span id="temperatureUnit"></span>
-                    </p>
-                    <p id="appTemp"> Gefühlt
-                        <span id="apparentTemperature"></span>
-                        <span id="apparentTemperatureUnit"></span>
-                    </p>
+                    <div class="current">
+                        <p id="temp">
+                            <span id="temperature"></span>
+                            <span id="temperatureUnit"></span>
+                        </p>
+                        <p id="appTemp"> Gefühlt
+                            <span id="apparentTemperature"></span>
+                            <span id="apparentTemperatureUnit"></span>
+                        </p>
+                    </div>
+
+                    <div class="current">
+                        <img id="iconWeather" src=""></img>
+                    </div>
+
                 </div>
 
-                <div class="current">
-                    <img id="iconWeather" src=""></img>
-                </div>
+                <div id="detailedWeather">
 
+                    <div id="moreWeather">
+
+                        <div class="more" id="more1">
+                            <p class="moreTitle">Wind</p>
+                            <p class="more">
+                                <span id="wind"></span>
+                                <span id="windUnit"></span>
+                            </p>
+                        </div>
+
+                        <div class="more" id="more2">
+                            <p class="moreTitle">Windböen</p>
+                            <p class="more">
+                                <span id="windGust"></span>
+                                <span id="windGustUnit"></span>
+                            </p>
+                        </div>
+
+                        <div class="more" id="more3">
+                            <p class="moreTitle">Niederschlag</p>
+                            <p class="more">
+                                <span id="precipitation"></span>
+                                <span id="precipitationUnit"></span>
+                            </p>
+                        </div>
+
+                        <div class="more" id="more4">
+                            <p class="moreTitle">Feuchtigkeit</p>
+                            <p class="more">
+                                <span id="humidity"></span>
+                                <span id="humidityUnit"></span>
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
             </div>
 
-            <div id="moreWeather">
-
-                <div class="more" id="more1">
-                    <p class="moreTitle">Wind</p>
-                    <p class="more">
-                        <span id="wind"></span>
-                        <span id="windUnit"></span>
-                    </p>
-                </div>
-
-                <div class="more" id="more2">
-                    <p class="moreTitle">Windböen</p>
-                    <p class="more">
-                        <span id="windGust"></span>
-                        <span id="windGustUnit"></span>
-                    </p>
-                </div>
-            </div>
-            <div id="moreWeather">
-                <div class="more" id="more3">
-                    <p class="moreTitle">Niederschlag</p>
-                    <p class="more">
-                        <span id="precipitation"></span>
-                        <span id="precipitationUnit"></span>
-                    </p>
-                </div>
-
-                <div class="more" id="more4">
-                    <p class="moreTitle">Feuchtigkeit</p>
-                    <p class="more">
-                        <span id="humidity"></span>
-                        <span id="humidityUnit"></span>
-                    </p>
-                </div>
-
-            </div>
             <p id="timex">
                 (<span id="time"></span>)
             </p>
