@@ -174,8 +174,7 @@ async function fetchDataCity() {
 
         for (let i = 0; i < 10; i++) {
             if (data.results[i]) {
-                document.getElementById("cityName" + i).innerHTML = data.results[i].name + " (" + data.results[i].admin1 + ")";
-                document.getElementById("countryName" + i).innerHTML = data.results[i].country;
+                document.getElementById("cityName" + i).innerHTML = data.results[i].name + " (" + data.results[i].admin1 + "), " + data.results[i].country;
             } else {
                 document.getElementById("cityCountry" + i).style.display = "none"
             }
