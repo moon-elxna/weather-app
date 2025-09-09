@@ -64,17 +64,25 @@ function setColorTheme(isDay) {
         const weather = document.getElementById("app");
         weather.style.backgroundColor = "#ffffffb7";
 
-        const more1 = document.getElementById("more1");
-        more1.style.backgroundColor = "#2d2f6163";
 
-        const more2 = document.getElementById("more2");
-        more2.style.backgroundColor = "#2d2f6163";
+        for (let i = 0; i <= 9; i++) {
+            const cityCountry = document.getElementById("cityCountry" + i);
+            if (cityCountry) {
+                cityCountry.style.backgroundColor = "#2d2f6163";
+            }
+        }
 
-        const more3 = document.getElementById("more3");
-        more3.style.backgroundColor = "#2d2f6163";
+        for (let i = 1; i <= 4; i++) {
+            const more = document.getElementById("more" + i);
+            if (more) {
+                more.style.backgroundColor = "#2d2f6163";
+            }
+        }
+        const inputSearch = document.getElementById("inputSearch");
+        inputSearch.style.backgroundColor = "#2d2f6163";
 
-        const more4 = document.getElementById("more4");
-        more4.style.backgroundColor = "#2d2f6163";
+        const btn1 = document.getElementById("btn1");
+        btn1.style.backgroundColor = "#2d2f6163";
     }
     else if (isDay == 1) {
         const body = document.getElementById("body");
@@ -83,17 +91,26 @@ function setColorTheme(isDay) {
         const weather = document.getElementById("app");
         weather.style.backgroundColor = "#ffffff9c";
 
-        const more1 = document.getElementById("more1");
-        more1.style.backgroundColor = "#7ddaff6f";
+        for (let i = 0; i <= 9; i++) {
+            const cityCountry = document.getElementById("cityCountry" + i);
+            if (cityCountry) {
+                cityCountry.style.backgroundColor = "#7ddaff6f";
+            }
+        }
 
-        const more2 = document.getElementById("more2");
-        more2.style.backgroundColor = "#7ddaff6f";
+        const inputSearch = document.getElementById("inputSearch");
+        inputSearch.style.backgroundColor = " #7ddaff6f";
 
-        const more3 = document.getElementById("more3");
-        more3.style.backgroundColor = "#7ddaff6f";
+        const btn1 = document.getElementById("btn1");
+        btn1.style.backgroundColor = " #7ddaff6f";
 
-        const more4 = document.getElementById("more4");
-        more4.style.backgroundColor = "#7ddaff6f";
+
+        for (let i = 1; i <= 4; i++) {
+            const more = document.getElementById("more" + i);
+            if (more) {
+                more.style.backgroundColor = "#7ddaff6f";
+            }
+        }
     }
     else {
         alert("Error bei Hintergrundfarb Anzeige!")

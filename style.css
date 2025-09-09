@@ -1,9 +1,73 @@
+/*TEXT ELEMENTS*/
+
 @font-face {
     font-family: "ElinaWeather";
     src: url("https://moon-elxna.github.io/weather-berlin/font/Elinaweather-Regular.ttf") format("truetype");
     font-display: block;
 }
 
+h1 {
+    font-size: 35px;
+    margin-left: 20px;
+    margin-top: 0px;
+    font-family: "ElinaWeather";
+}
+
+p {
+    color: black;
+    font-family: "ElinaWeather";
+}
+
+p#temp {
+    font-size: 36px;
+    font-weight: bolder;
+    margin-left: 20px;
+}
+
+p#appTemp {
+    font-size: 22px;
+    font-weight: normal;
+    margin-left: 20px;
+    margin-top: -20px;
+
+}
+
+p.more {
+    font-size: 18px;
+}
+
+p.moreTitle {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/*OTHER ELEMENTS*/
+
+button#btn1 {
+    cursor: pointer;
+    border-radius: 2px;
+    border-width: 0px;
+    font-size: 20px;
+    font-weight: normal;
+    font-family: "ElinaWeather";
+}
+
+input#inputSearch {
+    cursor: pointer;
+    border-radius: 2px;
+    border-width: 0px;
+    font-size: 20px;
+    font-weight: normal;
+    font-family: "ElinaWeather";
+}
+
+img {
+    max-width: 150px;
+    padding: 15px;
+}
+
+
+/*DIV*/
 
 body {
     display: flex;
@@ -12,36 +76,31 @@ body {
     gap: 10px;
 }
 
-
-
-#app {
+div#app {
     display: flex;
     flex-direction: column;
-    max-width: fit-content;
-    margin-top: 10px;
     padding: 12.5px;
-    border-width: 0px;
-    border-style: solid;
     border-radius: 10px;
-
 }
 
+div#searchBox {
+    margin-left: 20px;
+    margin-top: -10px;
+    margin-bottom: 10px
+}
 
 div#searchResultsSelection {
-
-    /* display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    gap: 5px; */
-
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(5, 1fr);
     grid-column-gap: 10px;
     grid-row-gap: 10px;
+}
+
+div.cityCountry {
+    cursor: pointer;
+    padding-left: 20px;
+    border-radius: 5px;
 }
 
 div#cityCountry0 {
@@ -84,43 +143,19 @@ div#cityCountry9 {
     grid-area: 5 / 2 / 6 / 3;
 }
 
-
-/* Make all direct children of #searchResultsSelection stretch to full width */
-div#searchResultsSelection>* {
-
-    width: 100%;
-    box-sizing: border-box;
-    background-color: rgb(220, 220, 220);
-    height: min-content;
-    font-size: 15px;
-    font-weight: normal;
-    font-family: "ElinaWeather";
-    width: 100%;
-    box-sizing: border-box;
-    padding: 0;
-    cursor: pointer;
-    /* Make it look clickable */
-
-    /* Optional: Add hover effect */
-    transition: background-color 0.2s;
-
-}
-
-#weather1 {
+div#weather1 {
     display: flex;
     flex-direction: row;
-
-
 }
 
-#currentWeather {
+div#currentWeather {
     display: flex;
     justify-content: space-evenly;
     gap: 10px;
     align-items: center;
 }
 
-#moreWeather {
+div#moreWeather {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
@@ -128,113 +163,35 @@ div#searchResultsSelection>* {
     grid-row-gap: 10px;
 }
 
-#more1 {
+div#more1 {
     grid-area: 1 / 1 / 2 / 2;
 }
 
-#more2 {
+div#more2 {
     grid-area: 1 / 2 / 2 / 3;
 }
 
-#more3 {
+div#more3 {
     grid-area: 2 / 1 / 3 / 2;
 }
 
-#more4 {
+div#more4 {
     grid-area: 2 / 2 / 3 / 3;
 }
 
-
 div.more {
-
-    border: 0px;
     border-radius: 10px;
     padding-left: 10px;
     padding-right: 30px;
-
-}
-
-img {
-    max-width: 150px;
-    padding: 15px;
-}
-
-h1 {
-    font-size: 35px;
-    margin-left: 20px;
-    margin-top: 0px;
-    font-family: "ElinaWeather";
-}
-
-h2 {
-    font-size: 15px;
-    font-weight: normal;
-    margin-left: 20px;
-    margin-top: -10px;
-    font-family: "ElinaWeather";
-}
-
-input {
-    font-size: 20px;
-    font-weight: normal;
-    font-family: "ElinaWeather";
-    display: inline-block;
-    width: fit-content;
-}
-
-button#btn1 {
-    font-size: 20px;
-    font-weight: normal;
-    font-family: "ElinaWeather";
-}
-
-button.cityCountry {
-    font-size: 15px;
-    font-weight: normal;
-    font-family: "ElinaWeather";
-    width: 100%;
-    padding: -10px;
-}
-
-p.cityName {
-    padding: 0px;
 }
 
 
-p {
-    color: black;
-    font-family: "ElinaWeather";
-}
-
-
-p#temp {
-    font-size: 36px;
-    font-weight: bolder;
-    margin-left: 20px;
-}
-
-p#appTemp {
-    font-size: 22px;
-    font-weight: normal;
-    margin-left: 20px;
-    margin-top: -20px;
-
-}
-
-p.more {
-    font-size: 18px;
-}
-
-p.moreTitle {
-    font-size: 18px;
-    font-weight: bold;
-}
+/*MEDIA QUERY*/
 
 @media (max-width: 700px) {
-    #weather1 {
+    div#weather1 {
         display: flex;
         flex-direction: column;
-
     }
 
     div#searchResultsSelection {
