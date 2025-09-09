@@ -1,43 +1,17 @@
-fetchDataCurrentWeather();
+fetchDataCurrentWeather("https://api.open-meteo.com/v1/forecast?latitude=52.5244&longitude=13.4105&current=temperature_2m,relative_humidity_2m,apparent_temperature,is_day,precipitation,weather_code,wind_gusts_10m,wind_speed_10m&timezone=Europe%2FBerlin&forecast_days=3&timeformat=unixtime");
 
-async function fetchDataCurrentWeather() {
-    try {
-        const weatherApiLink = "https://api.open-meteo.com/v1/forecast?latitude=52.5244&longitude=13.4105&current=temperature_2m,relative_humidity_2m,apparent_temperature,is_day,precipitation,weather_code,wind_gusts_10m,wind_speed_10m&timezone=Europe%2FBerlin&forecast_days=3&timeformat=unixtime";
-        const response = await fetch(weatherApiLink);
+function overlaySearchResults() {
+    document.getElementById("weatherElements").style.display = "none";
+    document.getElementById("searchResults").style.display = "block";
+}
 
-        if (!response.ok) {
-            throw new Error("Could not fetch resource"); // if the response not okay => error
-        }
-
-        const data = await response.json();
-
-        setColorTheme(data.current.is_day);
-        setWeatherIcon(data.current.weather_code, data.current.is_day);
-        unixToTime(data.current.time);
-
-        document.getElementById("temperature").innerHTML = data.current.temperature_2m.toFixed(0);
-        document.getElementById("temperatureUnit").innerHTML = data.current_units.temperature_2m;
-        document.getElementById("apparentTemperature").innerHTML = data.current.apparent_temperature.toFixed(0);
-        document.getElementById("apparentTemperatureUnit").innerHTML = data.current_units.apparent_temperature;
-        document.getElementById("wind").innerHTML = data.current.wind_speed_10m.toFixed(0);
-        document.getElementById("windUnit").innerHTML = data.current_units.wind_speed_10m;
-        document.getElementById("windGust").innerHTML = data.current.wind_gusts_10m.toFixed(0);
-        document.getElementById("windGustUnit").innerHTML = data.current_units.wind_gusts_10m;
-        document.getElementById("precipitation").innerHTML = data.current.precipitation;
-        document.getElementById("precipitationUnit").innerHTML = data.current_units.precipitation;
-        document.getElementById("humidity").innerHTML = data.current.relative_humidity_2m.toFixed(0);
-        document.getElementById("humidityUnit").innerHTML = data.current_units.relative_humidity_2m;
-    }
-
-    catch (error) {
-        console.error(error)
-    }
-
+function overlayWeatherElements() {
+    document.getElementById("weatherElements").style.display = "block";
+    document.getElementById("searchResults").style.display = "none";
 }
 
 function setWeatherIcon(iconWeather, isDay) {
     if (iconWeather == 0 || iconWeather == 1) {
-
 
         if (isDay == 1) {
             document.getElementById("iconWeather").src = "img/01d.png";
@@ -144,10 +118,43 @@ function btn1() {
         alert("Bitte Stadt eingeben!");
     } else {
         fetchDataCity();
-        console.log("huhu");
     }
 }
 
+async function fetchDataCurrentWeather(weatherApiLink) {
+    try {
+        const response = await fetch(weatherApiLink);
+
+        if (!response.ok) {
+            throw new Error("Could not fetch resource"); // if the response not okay => error
+        }
+        overlayWeatherElements();
+
+        const data = await response.json();
+
+        setColorTheme(data.current.is_day);
+        setWeatherIcon(data.current.weather_code, data.current.is_day);
+        unixToTime(data.current.time);
+
+        document.getElementById("temperature").innerHTML = data.current.temperature_2m.toFixed(0);
+        document.getElementById("temperatureUnit").innerHTML = data.current_units.temperature_2m;
+        document.getElementById("apparentTemperature").innerHTML = data.current.apparent_temperature.toFixed(0);
+        document.getElementById("apparentTemperatureUnit").innerHTML = data.current_units.apparent_temperature;
+        document.getElementById("wind").innerHTML = data.current.wind_speed_10m.toFixed(0);
+        document.getElementById("windUnit").innerHTML = data.current_units.wind_speed_10m;
+        document.getElementById("windGust").innerHTML = data.current.wind_gusts_10m.toFixed(0);
+        document.getElementById("windGustUnit").innerHTML = data.current_units.wind_gusts_10m;
+        document.getElementById("precipitation").innerHTML = data.current.precipitation;
+        document.getElementById("precipitationUnit").innerHTML = data.current_units.precipitation;
+        document.getElementById("humidity").innerHTML = data.current.relative_humidity_2m.toFixed(0);
+        document.getElementById("humidityUnit").innerHTML = data.current_units.relative_humidity_2m;
+    }
+
+    catch (error) {
+        console.error(error)
+    }
+
+}
 
 async function fetchDataCity() {
     console.log("shit");
@@ -163,12 +170,44 @@ async function fetchDataCity() {
         }
 
         const data = await response.json();
+        overlaySearchResults();
 
-        const firstName = data.results[0].name;
-        console.log(firstName)
+        for (let i = 0; i < 10; i++) {
+            if (data.results[i]) {
+                document.getElementById("cityName" + i).innerHTML = data.results[i].name + " (" + data.results[i].admin1 + ")";
+                document.getElementById("countryName" + i).innerHTML = data.results[i].country;
+            } else {
+                document.getElementById("cityCountry" + i).style.display = "none"
+            }
 
 
+        }
 
+
+    }
+
+    catch (error) {
+        console.error(error)
+    }
+
+
+}
+
+async function chooseCity(n) {
+    const city = document.getElementById("input1").value;
+    const cityApiLink = "https://geocoding-api.open-meteo.com/v1/search?name=" + city + "&count=10&language=de&format=json";
+
+    try {
+        const response = await fetch(cityApiLink);
+
+        if (!response.ok) {
+            throw new Error("Could not fetch resource");
+        }
+
+        const data = await response.json();
+
+        fetchDataCurrentWeather("https://api.open-meteo.com/v1/forecast?latitude=" + data.results[n].latitude + "&longitude=" + data.results[n].longitude + "&current=temperature_2m,relative_humidity_2m,apparent_temperature,is_day,precipitation,weather_code,wind_gusts_10m,wind_speed_10m&timezone=auto&forecast_days=3&timeformat=unixtime");
+        console.log("https://api.open-meteo.com/v1/forecast?latitude=" + data.results[n].latitude + "&longitude=" + data.results[n].longitude + "&current=temperature_2m,relative_humidity_2m,apparent_temperature,is_day,precipitation,weather_code,wind_gusts_10m,wind_speed_10m&timezone=auto&forecast_days=3&timeformat=unixtime");
     }
 
     catch (error) {

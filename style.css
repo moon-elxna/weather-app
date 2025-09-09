@@ -26,6 +26,23 @@ body {
 
 }
 
+#searchResults {
+    display: flex;
+    flex-direction: column;
+    max-width: fit-content;
+    margin-top: 10px;
+    padding: 12.5px;
+    border-width: 0px;
+    border-style: solid;
+    border-radius: 10px;
+
+}
+
+div.searchResultsChildren {
+    width: max-content;
+
+}
+
 #currentWeather {
     display: flex;
     justify-content: space-evenly;
@@ -75,22 +92,26 @@ input {
     width: fit-content;
 }
 
-button {
+button#btn1 {
     font-size: 20px;
     font-weight: normal;
     font-family: "ElinaWeather";
 }
+
+button.cityCountry {
+    font-size: 15px;
+    font-weight: normal;
+    font-family: "ElinaWeather";
+
+}
+
+
 
 p {
     color: black;
     font-family: "ElinaWeather";
 }
 
-p#time {
-    margin-top: 0px;
-    margin-bottom: -20px;
-    margin-left: 20px;
-}
 
 p#temp {
     font-size: 36px;
