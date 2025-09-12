@@ -190,16 +190,23 @@ async function fetchDataCity() {
         }
 
         const data = await response.json();
-        overlaySearchResults();
 
-        for (let i = 0; i < 10; i++) {
-            if (data.results[i]) {
-                document.getElementById("cityName" + i).innerHTML = data.results[i].name + " (" + data.results[i].admin1 + "), " + data.results[i].country;
-            } else {
-                document.getElementById("cityCountry" + i).style.display = "none"
+        if (!data.results || !Array.isArray(data.results)) {
+            // "results" array is missing or not an array
+              alert("Es sind keine Wetterdaten zu Ihrer Suche vorhanden! Bitte kontrollieren Sie, ob Ihre Eingabe richtig war, oder versuchen Sie es mit einer anderen Stadt.")
+        }
+        else {
+            overlaySearchResults();
+
+            for (let i = 0; i < 10; i++) {
+                if (data.results[i]) {
+                    document.getElementById("cityName" + i).innerHTML = data.results[i].name + " (" + data.results[i].admin1 + "), " + data.results[i].country;
+                } else {
+                    document.getElementById("cityCountry" + i).style.display = "none"
+                }
+
+
             }
-
-
         }
 
 
